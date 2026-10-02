@@ -1,9 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
+import type { LucideIcon } from "lucide-react";
 import { Cpu, Users, Building2, ShieldCheck, ChevronRight } from "lucide-react";
 
-const settingsItems = [
+const settingsItems: {
+  href: Route;
+  label: string;
+  description: string;
+  icon: LucideIcon;
+}[] = [
   { href: "/settings/ai", label: "AI Providers", description: "Configure API keys and models", icon: Cpu },
   { href: "/settings/leadership", label: "Leadership Style", description: "Choose how your CEO AI manages", icon: Users },
   { href: "/settings/organization", label: "Organization", description: "Departments and permissions", icon: Building2 },
